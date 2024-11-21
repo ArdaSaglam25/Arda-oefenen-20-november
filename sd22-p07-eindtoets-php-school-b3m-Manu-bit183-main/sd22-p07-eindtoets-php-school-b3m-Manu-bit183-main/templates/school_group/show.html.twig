@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1 class="masthead-heading text-uppercase mb-0">
+    Klassen overzicht
+</h1>
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>Naam</th>
+        <th>Jaar</th>
+        <th>SLB'er</th>
+        <th>Acties</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for group in school_groups %}
+            <tr>
+                <td>{{ group.name }}</td>
+                <td>{{ group.year }}</td>
+                <td>{{ group.teacher }}</td>
+                <td><a class="btn btn-outline-secondary" role="button">Toon Student</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
